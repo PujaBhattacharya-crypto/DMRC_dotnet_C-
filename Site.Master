@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="dmrc.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title></title>
+
+    <asp:PlaceHolder runat="server">
+    </asp:PlaceHolder>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form runat="server">
+        <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                     DELHI METRO RAIL CORPORATION
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:Image ID="Image1" runat="server" Height="75px" 
+                    ImageUrl="~/images/logo.jpg" />
+            </div>
+             <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" BackColor="Gray" BorderColor="#CCCCCC" ForeColor="Black">
+                    <DynamicHoverStyle BackColor="Black" />
+                    <DynamicMenuItemStyle BackColor="Gray" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home">
+                            <asp:MenuItem NavigateUrl="~/Stationslist.aspx" Text="Stations" Value="Stations"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem  Text="Admin" Value="Admin">
+                            <asp:MenuItem NavigateUrl="~/admin_login.aspx" Text="login" Value="login"></asp:MenuItem>
+                             
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Customer" Value="Customer">
+                            <asp:MenuItem Text="Tickets" Value="Tickets">
+                                <asp:MenuItem NavigateUrl="~/smartcard.aspx" Text="SmartCard Recharge" Value="SmartCard Recharge">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/QRTicket.aspx" Text="QR Ticket" Value="QR Ticket"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle BackColor="Gray" />
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+                       
+    </form>
+</body>
+</html>
